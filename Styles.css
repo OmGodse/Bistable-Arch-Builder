@@ -1,0 +1,260 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 352px auto;
+    font-family: 'Roboto';
+}
+
+#sidebar {
+    border-right: 1px solid #BDBDBD;
+}
+
+#content {
+    padding: 16px 24px 16px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+#options {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+div.tab-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.panel {
+    padding: 16px;
+}
+
+#editor {
+    border: 1px solid #4FC3F7;
+}
+
+.center {
+    align-self: center;
+}
+
+#graph {
+    border: 1px solid #BDBDBD;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+h1,
+h2 {
+    font-family: 'Palatino Linotype', 'Lora';
+}
+
+h2 {
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.body {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+button {
+    padding: 8px 12px 8px 12px;
+    border-style: none;
+    font-weight: 500;
+    font-family: 'Roboto';
+    letter-spacing: 0.5px;
+    transition-duration: 0.2s;
+}
+
+button.tab {
+    padding: 12px;
+    color: grey;
+    background-color: transparent;
+}
+
+button.tab:hover {
+    background-color: #EEEEEE;
+}
+
+button.selected-tab {
+    padding: 12px;
+    color: #1976D2;
+    background-color: transparent;
+}
+
+button.selected-tab:hover {
+    background-color: #B3E5FC;
+}
+
+button.blue {
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #1976D2;
+}
+
+button.blue:hover {
+    background-color: #2196F3;
+}
+
+button.light-blue {
+    width: 100%;
+    color: #1976D2;
+    background-color: transparent;
+    border: 1px solid #4FC3F7;
+}
+
+button.light-blue:hover {
+    background-color: #B3E5FC;
+}
+
+div.radiobutton-container {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+input[type="text"] {
+    margin-top: 16px;
+    padding: 8px;
+    font-family: 'Roboto';
+}
+
+input[type="range"],
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button,
+math,
+input {
+    font-size: 16px;
+}
+
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+#calculate,
+#slider {
+    margin-top: 16px;
+}
+
+#panel-draw,
+#panel-code {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+/* prism.js */
+
+pre[class*="language-"] {
+    padding: 16px;
+    overflow-x: auto;
+    box-sizing: border-box;
+    border: 1px solid #4FC3F7;
+    font-size: 16px;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+    background-color: #B3D4FC;
+}
+
+pre[class*="language-"]::selection {
+    background-color: #B3D4FC;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: #999999;
+}
+
+.token.namespace {
+    opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #990055;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #669900;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #9A6E3A;
+    background: hsla(0, 0%, 100%, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #0077AA;
+}
+
+.token.function,
+.token.class-name {
+    color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #EE9900;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}

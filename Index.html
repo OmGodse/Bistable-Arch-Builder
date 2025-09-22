@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bistable Arches</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="Lib/codemirror.css">
+
+    <script src="Lib/codemirror.js"></script>
+    <script src="Lib/javascript.js"></script>
+
+    <script src="Calculus.js" type="text/javascript" defer></script>
+    <script src="Master.js" type="text/javascript" defer></script>
+
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.5.3/math.js"></script>
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="tab-layout">
+            <button id="tab-draw">Draw</button>
+            <button id="tab-code">Code</button>
+        </div>
+        <div class="panel" id="panel-draw">
+            <p class="body" style="margin: 0;">
+                Click on any point on the canvas to start drawing.
+                Then, click on a different point to complete the line. Right
+                click to cancel the current line when drawing.
+            </p>
+        </div>
+        <div class="panel" id="panel-code">
+            <div id="editor"></div>
+            <button type="button" class="blue" id="calculate">Calculate</button>
+        </div>
+        <div class="panel">
+            <button type="button" class="light-blue" id="reset">Reset</button>
+        </div>
+        <div class="panel">
+            <b class="subtitle">Boundary Conditions</b>
+            <div class="radiobutton-container">
+                <input type="radio" id="pinned" name="boundary-condition" value="Pinned" checked>
+                <label for="pinned" class="body">Pinned</label>
+                <input type="radio" id="fixed" name="boundary-condition" value="Fixed">
+                <label for="fixed" class="body">Fixed</label>
+            </div>
+        </div>
+        <div class="panel">
+            <b class="subtitle">Q (
+                <math>
+                    <mfrac>
+                        <msub>
+                            <mi>h</mi>
+                            <mi>mid</mi>
+                        </msub>
+                        <mn>t</mn>
+                    </mfrac>
+                </math>
+                )
+            </b>
+            <input type="text" id="q" placeholder="5" autocomplete="off">
+        </div>
+        <div class="panel">
+            <b class="subtitle">Grid Spacing</b>
+            <div>
+                <input type="range" id="slider" min="0" max="4" step="1" value="1">
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <h1 class="center">Bistable Arch Builder 🔨</h1>
+        <div id="options">
+        </div>
+        <canvas class="center" id="canvas"></canvas>
+        <div id="results">
+            <h2>Results</h2>
+            <ul class="body" style="padding: 0; list-style-position: inside;">
+                <li style="color: #1976D2;">Fabricated</span></li>
+                <li style="color: #FF0000;">Unstable</span></li>
+                <li style="color: #9C27B0;">Stable</li>
+            </ul>
+            <h2>Python</h2>
+            <pre class="language-python"
+                style="width: max(792px, calc(100vw - 352px - 48px - 24px));"><code id="python-code"></code></pre>
+            <h2>Force Analysis</h2>
+        </div>
+        <div class="center" id="graph"></div>
+        <div>
+            <h2>References</h2>
+            <p class="body">
+                <a href="https://www.sciencedirect.com/science/article/pii/S0020768318301148">A bilateral
+                    relationship between stable profiles of pinned–pinned bistable shallow arches</a>
+                <br>
+                <a href="https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/11/3/031002/632814">Analysis
+                    and design of fixed–fixed bistable arch-profiles using a bilateral relationship</a>
+                <br>
+                <a href="https://www.sciencedirect.com/science/article/pii/S0094114X17303191">Design of bistable arches
+                    by determining critical points in the force-displacement characteristic</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
